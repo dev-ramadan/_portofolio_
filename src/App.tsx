@@ -3,6 +3,11 @@ import { darkTheme } from "./utils/Themes"
 import Nav from "./components/nav/Nav"
 import { BrowserRouter } from "react-router"
 import HeroSection from "./components/heroSection/HeroSection"
+import Skils from "./components/skils/Skils"
+import Experience from "./components/experience/Experience"
+import "./App.css"
+import Project from "./components/projects/Project"
+import Contact from "./components/contact/Contact"
 
 const Body = styled.div`
     background-color : ${({theme}) => theme.bg};
@@ -18,6 +23,10 @@ function App() {
       <Nav/>
       <Body>
         <HeroSection/>
+        <Skils/>
+        <Project/>
+        <Experience/>
+        <Contact/>
       </Body>
       </BrowserRouter>
     </ThemeProvider>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Bio } from "../../data/constants";
 import TypeWriter from "typewriter-effect";
-import HeroImg from "../../images/heroImg.jpeg"
+import HeroImg from "/images/heroImg.jpeg"
 import HeroBgAnimation from "../../HeroBgAnimation";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion"

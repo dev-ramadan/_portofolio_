@@ -137,8 +137,8 @@ const Nav = () => {
 
                     <NavItems>
                         <NavLink href="#About">About</NavLink>
-                        <NavLink href="#skils">Skils</NavLink>
-                        <NavLink href="#Experience">Experience</NavLink>
+                        <NavLink href="#Skills">Skils</NavLink>
+                        <NavLink href="#Education">Education</NavLink>
                         <NavLink href="#Projects">Projects</NavLink>
                         <NavLink href="#Contact">Contact</NavLink>
                     </NavItems>

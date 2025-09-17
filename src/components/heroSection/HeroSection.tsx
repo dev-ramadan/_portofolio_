@@ -6,6 +6,7 @@ import HeroBgAnimation from "../../HeroBgAnimation";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion"
 import { headContainerAnimation, headContentAnimation, headTextAnimation } from "../../utils/motion";
+import Stars from "../canvas/Stars";
 const HeroContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -184,13 +185,13 @@ const HeroBg = styled.div`
   }
 `
 
-// const HeroBgAnimation = styled.di
 
 const HeroSection = () => {
     return (
         <div id="about">
             <HeroContainer>
                 <HeroBg>
+                  <Stars/>
                     <HeroBgAnimation />
                 </HeroBg>
                 <motion.div {...headContainerAnimation}>

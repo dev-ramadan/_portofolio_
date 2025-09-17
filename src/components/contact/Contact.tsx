@@ -1,124 +1,149 @@
 import styled from "styled-components";
+import emailjs from "@emailjs/browser";
+import { useRef, type FormEvent } from "react";
+import toast from "react-hot-toast";
 
 const Container = styled.div`
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  position:relative;
-  z-index:1;
-  align-items:center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  align-items: center;
 `;
 
 const Wrapper = styled.div`
-  position:relative;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-direction:column;
-  width:100%;
-  max-width:1100px;
-  gap:12px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1100px;
+  gap: 12px;
 
-  @media (max-width:960px){
-    flex-direction:column;
+  @media (max-width: 960px) {
+    flex-direction: column;
   }
 `;
 
 const Title = styled.div`
-  font-size:52px;
-  text-align:center;
-  font-weight:600;
-  margin-top:20px;
-  color:${({ theme }) => theme.text_primary};
+  font-size: 52px;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 20px;
+  color: ${({ theme }) => theme.text_primary};
 
-  @media (max-width:768px){
-    margin-top:12px;
-    font-size:32px;
+  @media (max-width: 768px) {
+    margin-top: 12px;
+    font-size: 32px;
   }
 `;
 
 const Desc = styled.div`
-  font-size:18px;
-  text-align:center;
-  font-weight:600;
-  color:${({ theme }) => theme.text_secondary};
+  font-size: 18px;
+  text-align: center;
+  font-weight: 600;
+  color: ${({ theme }) => theme.text_secondary};
 
-  @media (max-width:768px){
-    margin-top:12px;
-    font-size:16px;
+  @media (max-width: 768px) {
+    margin-top: 12px;
+    font-size: 16px;
   }
 `;
 
 const ContactForm = styled.form`
-  width:59%;
-  max-width:600px;
-  display:flex;
+  width: 59%;
+  max-width: 600px;
+  display: flex;
   flex-direction: column;
-  background-color: rgba(17,25,40,0.83);
-  border: 1px solid rgba(255,255,255,0.125);
-  padding:32px;
-  border-radius:12px;
-  box-shadow: rgba(23,92,230,0.1) 0px 4px 24px;
-  margin-top:28px;
-  gap:12px;
+  background-color: rgba(17, 25, 40, 0.83);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: rgba(23, 92, 230, 0.1) 0px 4px 24px;
+  margin-top: 28px;
+  gap: 12px;
 `;
 
 const ContactTitle = styled.div`
-  font-size:28px;
-  margin-bottom:6px;
-  font-weight:600;
-  color:${({theme})=>theme.text_secondary};
+  font-size: 28px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: ${({ theme }) => theme.text_secondary};
 `;
 
 const ContactInput = styled.input`
-  flex:1;
-  background-color:transparent;
-  border:1px solid rgba(255,255,255,0.3);
-  outline:none;
-  color:${({theme})=>theme.text_primary};
-  border-radius:12px;
-  padding:12px 16px;
+  flex: 1;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  color: ${({ theme }) => theme.text_primary};
+  border-radius: 12px;
+  padding: 12px 16px;
 
-  &:focus{
-    border: 1px solid ${({theme}) => theme.primary};
+  &:focus {
+    border: 1px solid ${({ theme }) => theme.primary};
   }
 `;
 
 const ContactInputMessage = styled.textarea`
-  flex:1;
-  background-color:transparent;
-  border:1px solid rgba(255,255,255,0.3);
-  outline:none;
-  font-size:18px;
-  color:${({theme})=>theme.text_primary};
-  border-radius:12px;
-  padding:12px 16px;
+  flex: 1;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  font-size: 18px;
+  color: ${({ theme }) => theme.text_primary};
+  border-radius: 12px;
+  padding: 12px 16px;
 
-  &:focus{
-    border: 1px solid ${({theme}) => theme.primary};
+  &:focus {
+    border: 1px solid ${({ theme }) => theme.primary};
   }
 `;
 
 const ContactButton = styled.input`
-  width:100%;
-  text-decoration:none;
-  text-align:center;
-  background: hsl(271,100%,50%);
-  padding:13px 16px;
-  border:none;
-  color:${({theme}) => theme.text_primary};
-  font-size:18px;
-  font-weight:600;
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+  background: hsl(271, 100%, 50%);
+  padding: 13px 16px;
+  border: none;
+  color: ${({ theme }) => theme.text_primary};
+  font-size: 18px;
+  font-weight: 600;
   border-radius: 8px;
-  cursor:pointer;
+  cursor: pointer;
   transition: all 0.3s ease;
 
-  &:hover{
-    opacity:0.9;
+  &:hover {
+    opacity: 0.9;
   }
 `;
 
 const Contact = () => {
+  const form = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    if (!form.current) return;
+
+    emailjs
+      .sendForm(
+        "service_wzsbtid",   
+        "template_3ivbv2j",  
+        form.current,
+        "6urSmNfRN8Rhtj0fC"  
+      )
+      .then(
+        () => {
+          toast.success("Message Sent Successfully");
+          form.current!.reset(); 
+        },
+        (err) => toast.error("Error ❌ " + err.text)
+      );
+  };
+
   return (
     <Container id="Contact">
       <Wrapper>
@@ -126,12 +151,32 @@ const Contact = () => {
         <Desc style={{ marginBottom: "48px" }}>
           Feel free to reach out to me for any questions or opportunities!
         </Desc>
-        <ContactForm>
+        <ContactForm ref={form} onSubmit={handleSubmit}>
           <ContactTitle>Email Me</ContactTitle>
-          <ContactInput placeholder="Your Email" name="form_email"/>
-          <ContactInput placeholder="Your Name" name="form_name"/>
-          <ContactInput placeholder="Subject" name="subject"/>
-          <ContactInputMessage placeholder="Message" name="message" rows={4}/>
+          <ContactInput
+            type="text"
+            placeholder="Your Name"
+            name="form_name"   
+            required
+          />
+          <ContactInput
+            type="email"
+            placeholder="Your Email"
+            name="form_email" 
+            required
+          />
+          <ContactInput
+            type="text"
+            placeholder="Subject"
+            name="subject"     
+            required
+          />
+          <ContactInputMessage
+            placeholder="Message"
+            name="message"    
+            rows={4}
+            required
+          />
           <ContactButton type="submit" value="Send" />
         </ContactForm>
       </Wrapper>

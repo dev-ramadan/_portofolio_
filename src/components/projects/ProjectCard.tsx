@@ -1,21 +1,22 @@
+import { Code, Link } from "@mui/icons-material";
 import styled from "styled-components";
 
 interface IProps {
-    project:  {
+    project: {
         id: number;
         title: string;
         description: string;
         tags: string[];
         category: string;
         github: string;
-        webapp:string;
-        image:string;
+        webapp: string;
+        image: string;
     }
 };
 const Card = styled.div`
     width:330px;
     height:490px;
-    background-color:${({theme}) => theme.card};
+    background-color:${({ theme }) => theme.card};
     cursor:pointer;
     border-radius:10px;
     box-shadow: 0 0 12px 4px rgba(0,0,0,0.4);
@@ -35,7 +36,7 @@ const Card = styled.div`
 const Image = styled.img`
     width:100%;
     height:180px;
-    background-color:${({theme}) => theme.white};
+    background-color:${({ theme }) => theme.white};
     border-radius:10px;
     box-shadow: 0 0 16px 2px rgba(0,0,0,0.3);
 `
@@ -51,7 +52,7 @@ const Details = styled.div`
 const Title = styled.div`
     font-size:20px;
     font-weight:600;
-    colot:${({theme}) => theme.text_secondary};
+    colot:${({ theme }) => theme.text_secondary};
     overflow:hidden;
     display:-webkit-box;
     max-width:100%;
@@ -62,7 +63,7 @@ const Title = styled.div`
 
 const Description = styled.div`
     font-weight:400;
-    color:${({theme})=>theme.text_secondary + 99};
+    color:${({ theme }) => theme.text_secondary + 99};
     overflow:hidden;
     margin-top:8px;
     display:-webkit-box;
@@ -83,25 +84,37 @@ const Tags = styled.div`
 `
 
 const Button = styled.a`
-    color:${({theme})=>theme.primary };
+    color:${({ theme }) => theme.primary};
     text-decoration:none;
     font-weiht:600;
     text-align:center;
+    display:flex;
+    align-items:center;
+    gap:5px;
     
+`;
+const ProjectLink = styled.div`
+    display:flex;
+    justify-content:space-between;
+    padding:2px;
+    margin-top:7px;
 `
 
 
-const ProjectCard = ({ project}: IProps) => {
+const ProjectCard = ({ project }: IProps) => {
 
     return (
         <Card>
-            <Image src={project.image} alt={project.category} loading="lazy"/>
+            <Image src={project.image} alt={project.category} loading="lazy" />
             <Tags></Tags>
             <Details>
                 <Title>{project.title}</Title>
                 <Description>{project.description}</Description>
             </Details>
-            <Button href={project.github} target="_blank">View Code</Button>
+            <ProjectLink>
+                <Button href={project.webapp} target="_blank"><Link/> Demo</Button>
+                <Button href={project.github} target="_blank"><Code/> View Code</Button>
+            </ProjectLink>
         </Card>
     )
 }

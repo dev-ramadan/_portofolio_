@@ -13,7 +13,7 @@ const StyleCanvasWrapper = styled.div`
 `
 
 const Stars = (props: any) => {
-    useFrame((state,delta) => {
+    useFrame((_,delta) => {
         ref.current.rotation.x -= delta/10;
         ref.current.rotation.y -= delta/15;
 

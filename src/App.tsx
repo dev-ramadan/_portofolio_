@@ -1,5 +1,5 @@
 import styled, { ThemeProvider } from "styled-components"
-import { darkTheme , lightTheme} from "./utils/Themes"
+import { darkTheme } from "./utils/Themes"
 import Nav from "./components/nav/Nav"
 import { BrowserRouter } from "react-router"
 import HeroSection from "./components/heroSection/HeroSection"

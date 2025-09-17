@@ -11,8 +11,8 @@ export const Bio = {
   github: "https://github.com/dev-ramadan",
   resume:
     "https://drive.google.com/file/d/1txFKZD3LNIXMc329jD9c995AU8LItOXK/view?usp=drive_link",
-  linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
-  facebook: "https://www.facebook.com/rishav.chanda.165/",
+  linkedin: "https://www.linkedin.com/in/ramadan-mohamed-828120330/",
+  facebook: "https://www.facebook.com/rmdan.mhmd.497928",
 };
 
 export const skills = [

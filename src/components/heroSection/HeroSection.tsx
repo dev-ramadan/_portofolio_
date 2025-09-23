@@ -144,7 +144,7 @@ const ResumemButton = styled.a`
   font-size: 18px;
   cursor: pointer;
   background: ${({ theme }) => theme.primary};
-  color:  ${({ theme }) => theme.text_primary};
+  color: white;
   &:hover {
     transform: scale(1.05);
     transition: all 0.4s ease-in-out;

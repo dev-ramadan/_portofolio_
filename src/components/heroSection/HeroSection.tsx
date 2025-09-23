@@ -245,7 +245,7 @@ const HeroSection = () => {
                   
                 </div>
               </div>
-              <ResumemButton href="#">Check Resume</ResumemButton>
+              <ResumemButton href="https://drive.google.com/file/d/1WOnT3yOzpymSe3w1SsmqLXtnBOXtwZmi/view?usp=sharing" target="_blank">Check Resume</ResumemButton>
             </HeroLeftContainer>
 
             <HeroRightContainer>

@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { Bio } from "../../data/constants";
 import { FacebookRounded, GitHub, LinkedIn } from "@mui/icons-material";
 
+// ===== Styled Components =====
+
+// Outer container for the footer
 const FooterContainer = styled.div`
   width: 100%;
   padding: 2rem 0;
@@ -11,6 +14,7 @@ const FooterContainer = styled.div`
   z-index: 10;
 `;
 
+// Wrapper to center and control the footer layout
 const FooterWrapper = styled.div`
   width: 100%;
   max-width: 1200px;
@@ -22,12 +26,14 @@ const FooterWrapper = styled.div`
   color: ${({ theme }) => theme.text_primary};
 `;
 
+// Logo / brand name
 const Logo = styled.div`
   font-weight: 600;
   font-size: 20px;
   color: ${({ theme }) => theme.text_primary};
 `;
 
+// Navigation container
 const Nav = styled.ul`
   width: 100%;
   max-width: 800px;
@@ -46,6 +52,7 @@ const Nav = styled.ul`
   }
 `;
 
+// Navigation link
 const NavLink = styled.a`
   color: ${({ theme }) => theme.text_primary};
   text-decoration: none;
@@ -62,11 +69,13 @@ const NavLink = styled.a`
   }
 `;
 
+// Social media container
 const SocialMedia = styled.div`
   display: flex;
   margin-top: 1rem;
 `;
 
+// Social media icon link
 const SocialMediaIcon = styled.a`
   display: inline-block;
   margin: 0 1rem;
@@ -88,6 +97,7 @@ const SocialMediaIcon = styled.a`
   }
 `;
 
+// Copyright text
 const Copyright = styled.div`
   margin-top: 1.5rem;
   font-size: 0.9rem;
@@ -95,11 +105,15 @@ const Copyright = styled.div`
   text-align: center;
 `;
 
+// ===== Footer Component =====
 const Footer = () => {
   return (
     <FooterContainer>
       <FooterWrapper>
+        {/* Logo */}
         <Logo>Ramadan Mohamed</Logo>
+
+        {/* Navigation links */}
         <Nav>
           <NavLink href="#About">About</NavLink>
           <NavLink href="#Skills">Skills</NavLink>
@@ -107,6 +121,8 @@ const Footer = () => {
           <NavLink href="#Projects">Projects</NavLink>
           <NavLink href="#Contact">Contact</NavLink>
         </Nav>
+
+        {/* Social media links */}
         <SocialMedia>
           <SocialMediaIcon
             href={Bio.facebook}
@@ -132,6 +148,8 @@ const Footer = () => {
             <LinkedIn />
           </SocialMediaIcon>
         </SocialMedia>
+
+        {/* Copyright */}
         <Copyright>
           &copy; 2025 Ramadan Mohamed. All rights reserved.
         </Copyright>

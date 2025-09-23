@@ -143,12 +143,13 @@ const ResumemButton = styled.a`
   font-weight: 700;
   font-size: 18px;
   cursor: pointer;
+  background: ${({ theme }) => theme.primary};
+  color:  ${({ theme }) => theme.text_primary};
   &:hover {
     transform: scale(1.05);
     transition: all 0.4s ease-in-out;
     box-shadow: 20px 20px 60px #1f2634;
   }
-  background: ${({ theme }) => theme.primary};
   @media (max-width: 640px) {
     font-size: 20px;
     padding: 12px 0;

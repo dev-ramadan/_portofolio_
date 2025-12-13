@@ -65,12 +65,47 @@ export const education = [
 
 export const projects = [
   {
+    id: 12,
+    title: "RE State Admin Dashboard",
+    description: "A full-stack real estate platform that allows admins to manage users, agents, brokers, and properties through a powerful dashboard.The system supports full CRUD operations, real-time analytics with charts, and efficient property management.",
+    image:
+      "https://res.cloudinary.com/dmdltantp/image/upload/v1765626919/%D9%84%D9%82%D8%B7%D8%A9_%D8%B4%D8%A7%D8%B4%D8%A9_2025-12-13_134823_k2c90s.png",
+    tags: [
+      "React Js",
+      "Redux",
+      "React Router",
+      "Tailwind",
+      "Rechart Js",
+      "Type Script and more..",
+    ],
+    category: "react",
+    github: "https://github.com/dev-ramadan/RE-state-Dashboard",
+    webapp: "https://re-state-dashboard-qhfl.vercel.app",
+  },
+  {
+    id: 11,
+    title: "RE State",
+    description: "A modern real estate website designed to help users discover properties easily.The platform focuses on a smooth user experience with powerful search and interaction features.",
+    image:
+      "https://res.cloudinary.com/dmdltantp/image/upload/v1765626918/screencapture-re-state-front-end-vercel-app-2025-12-13-13_49_18_ek9da9.png",
+    tags: [
+      "React Js",
+      "Redux",
+      "React Router",
+      "Tailwind",
+      "Type Script and more..",
+    ],
+    category: "react",
+    github: "https://github.com/dev-ramadan/RE-state-front-end",
+    webapp: "https://re-state-front-end.vercel.app/",
+  },
+  {
     id: 1,
     title: "Docrot AMS",
     description:
       "A Rule Builder application “Docrot AMS” that empowers Business Analysts to create, save, and visualize decision strategies. Provide a no-code rule writing experience and visual representation to test these rules in real-time and observe the calculations at each step.",
     image:
-    "https://appointment-management-system-fo8g.vercel.app/assets/header_img-DhAi3lLA.png",
+      "https://appointment-management-system-fo8g.vercel.app/assets/header_img-DhAi3lLA.png",
     tags: [
       "React Js",
       "Redux",
@@ -141,7 +176,7 @@ export const projects = [
   {
     id: 6,
     title: "Food Menu",
-    description:"Developed this website as part of my learning journey to enhance my practical experience.",
+    description: "Developed this website as part of my learning journey to enhance my practical experience.",
     image:
       "https://res.cloudinary.com/dmdltantp/image/upload/v1758035319/%D9%84%D9%82%D8%B7%D8%A9_%D8%B4%D8%A7%D8%B4%D8%A9_2025-09-16_180818_qfnesr.png",
     tags: ["HTML", "CSS", "JS"],
@@ -152,10 +187,10 @@ export const projects = [
   {
     id: 7,
     title: "Foddy Zoon",
-    description:"Built with React.js for the frontend and integrated modern UI components to ensure a responsive and user-friendly experience.",
+    description: "Built with React.js for the frontend and integrated modern UI components to ensure a responsive and user-friendly experience.",
     image:
       "https://res.cloudinary.com/dmdltantp/image/upload/v1758035619/%D9%84%D9%82%D8%B7%D8%A9_%D8%B4%D8%A7%D8%B4%D8%A9_2025-09-16_181313_w5rncx.png",
-    tags: ["React", "TypeScript", "Axios" , "TailwindCss"],
+    tags: ["React", "TypeScript", "Axios", "TailwindCss"],
     category: "react",
     github: "https://github.com/dev-ramadan/food",
     webapp: "https://food-liard-eta.vercel.app/",
@@ -163,7 +198,7 @@ export const projects = [
   {
     id: 8,
     title: "Memory Game",
-    description:"Features a clean UI, smooth animations, and responsive design for an engaging user experience.",
+    description: "Features a clean UI, smooth animations, and responsive design for an engaging user experience.",
     image:
       "https://res.cloudinary.com/dmdltantp/image/upload/v1747067847/olmamy4rtsafrcve6adl.png",
     tags: ["HTML", "Css", "Js"],
@@ -176,7 +211,7 @@ export const projects = [
     title: "Todo Web App",
     description:
       " A Todo Web App made with React JS, Redux.  can create a new task.  users can see all the tasks.",
-    image:"https://res.cloudinary.com/dmdltantp/image/upload/v1747067003/pthlatjskpj3gu9xoxkh.png",
+    image: "https://res.cloudinary.com/dmdltantp/image/upload/v1747067003/pthlatjskpj3gu9xoxkh.png",
     tags: ["React Js", "Local Storage", "TypeScript", "TailwindCss"],
     category: "react",
     github: "https://github.com/dev-ramadan/react-to-do-app",
@@ -185,7 +220,7 @@ export const projects = [
   {
     id: 10,
     title: "Islamic website",
-    description:"A comprehensive Islamic website providing users with access to the Holy Qur’an, daily prayer times, Hadith collections, and educational articles.",
+    description: "A comprehensive Islamic website providing users with access to the Holy Qur’an, daily prayer times, Hadith collections, and educational articles.",
     image:
       "https://res.cloudinary.com/dmdltantp/image/upload/v1758036484/%D9%84%D9%82%D8%B7%D8%A9_%D8%B4%D8%A7%D8%B4%D8%A9_2025-09-16_182736_ojt9gk.png",
     tags: ["HTML", "Css", "JS", "API"],

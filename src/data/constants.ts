@@ -99,6 +99,24 @@ export const projects = [
     github: "https://github.com/dev-ramadan/RE-state-front-end",
     webapp: "https://re-state-front-end.vercel.app/",
   },
+    {
+    id: 15,
+    title: "Woman E-comarce",
+    description: "A full-stack real estate platform that allows admins to manage users, agents, brokers, and properties through a powerful dashboard.The system supports full CRUD operations, real-time analytics with charts, and efficient property management.",
+    image:
+      "https://res.cloudinary.com/dvbfsojns/image/upload/v1774540360/Screenshot_57_ues0rc.png",
+    tags: [
+      "React Js",
+      "Redux",
+      "React Router",
+      "Tailwind",
+      "supabase",
+      "Type Script and more..",
+    ],
+    category: "react",
+    github: "https://github.com/dev-ramadan/woman_E-comarce",
+    webapp: "https://woman-e-comarce.vercel.app/",
+  },
   {
     id: 1,
     title: "Docrot AMS",

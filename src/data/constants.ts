@@ -63,7 +63,28 @@ export const education = [
 
 ];
 
+
 export const projects = [
+    {
+    id: 13,
+    title: "EDUPLATFORM",
+    description: "An all-in-one e-learning platform designed to deliver a seamless and secure learning experience for students, with a powerful dashboard for instructors to manage content and subscriptions.",
+    image:
+      "https://res.cloudinary.com/dvbfsojns/image/upload/v1781179418/1_gspawy.png",
+    tags: [
+      "React Js",
+      "Node JS",
+      "REST API",
+      "Redux",
+      "React Router",
+      "Tailwind",
+      "Rechart Js",
+      "Type Script and more..",
+    ],
+    category: "react",
+    github: "https://github.com/dev-ramadan/education-platForm",
+    webapp: "https://edu-plat-form.vercel.app/",
+  },
   {
     id: 12,
     title: "RE State Admin Dashboard",
